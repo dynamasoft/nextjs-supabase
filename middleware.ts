@@ -3,12 +3,13 @@ import type { NextRequest } from "next/server"
 import { updateSession } from "@/utils/supabase/middleware"
 
 export async function middleware(request: NextRequest) {
+    
   // Update the session
   const response = await updateSession(request)
 
   // Get the pathname
   const pathname = request.nextUrl.pathname
-
+  
   // Public routes - no authentication needed
   const publicRoutes = ["/", "/login", "/signup", "/login/direct", "/auth/callback"]
   const isPublicRoute = publicRoutes.some((route) => pathname === route || pathname.startsWith(route))

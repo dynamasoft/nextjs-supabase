@@ -23,6 +23,7 @@ export async function login(formData: FormData) {
 }
 
 export async function signup(formData: FormData) {
+  debugger;
   const supabase = await createClient()
 
   const data = {

@@ -14,6 +14,7 @@ export default function SignupPage() {
   const [loading, setLoading] = useState(false)
 
   async function handleSubmit(formData: FormData) {
+    debugger;
     setLoading(true)
     setMessage(null)
 
